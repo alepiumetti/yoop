@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&display=swap');
+
+/* Navbar */
+
+/* Logo Nav-Bar */
+
+.container-logo{
+    text-align: center;
+    width: 50%;
+  }
+  
+  .App-logo {
+    height: 40vmin;
+    transition: 0.5s;
+    
+  }
+  .App-logo:hover{
+    opacity: 0.5;
+    
+  }
+  
+  .App-logo{
+    height: 50px;
+  }
+
+/* NavBar */
+
+.nav-bar{
+    
+    background-color:rgba(0,0,0,0.5);
+    display: flex;
+    width: 100%;
+    height: 80px;
+    justify-content: center;
+    align-items: center; 
+    
+  }
+  
+  .nav{
+
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-content:center;   
+    
+  }
+  
+  .btn-nav {
+    color:#FFF;
+    font-family: 'Montserrat', sans-serif;
+    text-decoration: none; 
+    font-weight: bold;
+    padding: 10px;
+    transition: 0.5s;
+  
+  }
+  
+  .btn-nav:hover{
+    color: #f18179;
+  }
+
+
+/* MediaQueries */
+
+@media screen and (max-width:780px){
+
+    
+    .nav-bar{
+      flex-direction: column;
+      height: auto;
+      
+      
+    }
+  
+    .container-logo{
+      width: 100%;
+      padding-top: 20px;
+  
+    }
+  
+    .nav{
+      width: 100%;
+      padding-top: 10px;
+      padding-bottom: 20px;
+    }
+}
