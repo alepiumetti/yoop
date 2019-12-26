@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {BrowserRouter as Router, Route, Link} from 'react-router-dom';
+import {BrowserRouter as Router, Route} from 'react-router-dom';
 
 
 //Style
@@ -11,7 +11,7 @@ import './styles/App.css';
 import Navbar from './components/layout/navbar/Navbar'
 import Inicio from './components/layout/index/Inicio'
 import Footer from './components/layout/footer/Footer'
-import Asociate from './components/layout/asociate/Asociate'
+
 
 //Main App
 class App extends Component {
@@ -29,31 +29,21 @@ class App extends Component {
                 </div>
             }}/>
 
-              <Route exact path="/asociate" render={()=>{
-                return  <div> 
-                <Navbar/>
-                 <Asociate/>
-                <Footer/>
-                </div>
-              }}/>
-
               <Route exact path="/ayuda" render={()=>{
                 return  <div> 
                 <Navbar/>
                 
                 <Footer/>
                 </div>
-              }}/>
+              }}/>            
 
-              <Route exact path="/iniciar-sesion" render={()=>{
-                return  <div> 
-                
-                
-                <Footer/>
+              <Route exact path="/contacto" render={()=>{
+                return <div>
+                  <Navbar/>
+
+                  <Footer/>
                 </div>
               }}/>
-
-            
           </Router>
       </div>
   }

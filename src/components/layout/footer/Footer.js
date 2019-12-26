@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-import {BrowserRouter as Router, Route, Link} from 'react-router-dom';
+import {BrowserRouter as Route,Router,Link} from 'react-router-dom';
 
 import './FooterStyle.css';
 
@@ -15,10 +14,6 @@ import logoColor from '../../img/logo yoop.svg'
 
 
 export class Footer extends Component {
-    static propTypes = {
-
-    }
-
     render() {
         return (
             <div className="container-footer">
@@ -28,9 +23,7 @@ export class Footer extends Component {
                 <div className="container-footer-menu">
                     <ul>
                         <li><Link className="btn-footer" to="/" > Inicio </Link></li> 
-                        <li><Link className="btn-footer" to="/premium"> Premium </Link></li>
                         <li><Link className="btn-footer" to="/ayuda"> Ayuda </Link></li>
-                        <li><Link className="btn-footer" to="/iniciar-sesion"> Iniciar Sesión </Link></li>
                     </ul>
                 </div>
                 <div className="container-footer-socialmedia">
