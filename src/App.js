@@ -8,9 +8,11 @@ import './styles/App.css';
 //BDD
 
 //Components 
+import NavbarInicio from './components/layout/navbar-inicio/NavbarInicio'
 import Navbar from './components/layout/navbar/Navbar'
 import Inicio from './components/layout/index/Inicio'
 import Footer from './components/layout/footer/Footer'
+import Contacto from './components/layout/contacto/Contacto'
 
 
 //Main App
@@ -23,7 +25,7 @@ class App extends Component {
             
               <Route exact path="/" render={()=> {
                 return <div className="container"> 
-                <Navbar className="nav-bar"/>
+                <NavbarInicio/>
                 <Inicio/>
                 <Footer/>
                 </div>
@@ -40,7 +42,7 @@ class App extends Component {
               <Route exact path="/contacto" render={()=>{
                 return <div>
                   <Navbar/>
-
+                  <Contacto/>
                   <Footer/>
                 </div>
               }}/>

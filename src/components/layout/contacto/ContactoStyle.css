@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&display=swap');
+
+/* Containers */
+
+.container-contacto{
+    width: 100%;    
+    justify-content: center;
+    display: flexbox;
+    text-align: center;
+}
+
+.container-form {
+    padding: 10px;
+
+}
+
+/* Botones */
+
+.btn-form {
+    border-style: none;
+    background-color: lightgreen;
+    padding: 5px 15px 5px 15px;
+    border-radius: 30px;
+    font-family: 'Montserrat', sans-serif;
+
+}
+
+/* Titúlos y Textos */
+
+.asterisco-required-contact{
+    color: red;
+}
+
+.campos-requeridos{
+    font-size: 12px;
+}

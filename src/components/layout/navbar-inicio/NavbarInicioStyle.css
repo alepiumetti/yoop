@@ -4,7 +4,7 @@
 
 /* Logo Nav-Bar */
 
-.container-logo{
+.container-logo-inicio{
     text-align: center;
     width: 50%;
   }
@@ -14,20 +14,20 @@
     transition: 0.5s;
     
   }
-  .App-logo:hover{
+  .container-logo-inicio .App-logo:hover{
     opacity: 0.5;
     
   }
   
-  .App-logo{
+  .nav-inicio .App-logo{
     height: 50px;
   }
 
 /* NavBar */
 
-.nav-bar{
+.nav-bar-inicio{
     
-    background-color:rgba (0,0,0,0);
+    background-color:rgba(0,0,0,0);
     display: flex;
     width: 100%;
     height: 80px;
@@ -36,7 +36,7 @@
     
   }
   
-  .nav{
+  .nav-inicio{
 
     width: 50%;
     display: flex;
@@ -45,8 +45,8 @@
     
   }
   
-  .btn-nav {
-    color:black;
+  .nav-inicio .btn-nav {
+    color:#FFF;
     font-family: 'Montserrat', sans-serif;
     text-decoration: none; 
     font-weight: bold;
