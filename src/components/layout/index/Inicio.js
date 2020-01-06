@@ -1,6 +1,14 @@
 import React, { Component } from 'react';
 
 
+
+// Imports Icons
+
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import {fawhatsapp} from '@fortawesome/free-brands-svg-icons'
+
+// Imports IMG
+
 import smartphoneApp from '../../img/banner-mobile.png';
 import logoGooglePlay from '../../img/google-play-badge.png';
 import iconoBags from '../../icons/bags.svg';
@@ -8,6 +16,8 @@ import iconoQr from '../../icons/qr.svg';
 import iconoSmartphone from '../../icons/smartphone.svg';
 import iconoSmartphoneDesc from '../../icons/smartphonedescuento.svg'
 import imgCompra from '../../img/market.png';
+
+// Import Styles 
 
 import './inicioStyle.css';
 
@@ -59,10 +69,12 @@ export class Inicio extends Component {
                 </div>
 
                 <div className="container-marca-amiga">
+                  
                   <div className="container-title-btn-marca-amiga">
                     <p className="title-marca-amiga">Sumate como marca amiga </p>
-                    <button className="btn-marca-amiga">Quiero ser parte</button>
+                    <a href="http://wpp-redirect.herokuapp.com/go/?p=5493413717471&m=Hola!%20Quiero%20sumarme%20como%20marca%20amiga%20y%20brindar%20descuentos%20a%20los%20asociados."><button className="btn-marca-amiga">Quiero ser parte</button> </a>
                   </div>
+                  
                   <div className="img-marca-amiga">
                     <img src={imgCompra} className="img-marcaamiga" alr="Imagen Marcas amigas" />
                   </div>

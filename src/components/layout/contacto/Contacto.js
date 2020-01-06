@@ -8,7 +8,14 @@ export class Contacto extends Component {
         return ( 
         <div className = "container-contacto"> 
             <div className = "container-explicacion" >
+                <h1>
+                    Hablanos
+                </h1>
+                <p>
+                    Si tenés alguna pregunta o recomendación, tenemos multiples medios para que te comuniques con nosotros.
+                </p>
 
+                
             </div>
 
             <div className = "container-numeros">
