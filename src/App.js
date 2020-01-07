@@ -12,7 +12,8 @@ import NavbarInicio from './components/layout/navbar-inicio/NavbarInicio'
 import Navbar from './components/layout/navbar/Navbar'
 import Inicio from './components/layout/index/Inicio'
 import Footer from './components/layout/footer/Footer'
-import Contacto from './components/layout/contacto/Contacto'
+import Ayuda from './components/layout/ayuda/Ayuda'
+
 
 
 //Main App
@@ -34,18 +35,10 @@ class App extends Component {
               <Route exact path="/ayuda" render={()=>{
                 return  <div> 
                 <Navbar/>
-                
+                <Ayuda/>
                 <Footer/>
                 </div>
               }}/>            
-
-              <Route exact path="/contacto" render={()=>{
-                return <div>
-                  <Navbar/>
-                  <Contacto/>
-                  <Footer/>
-                </div>
-              }}/>
           </Router>
       </div>
   }

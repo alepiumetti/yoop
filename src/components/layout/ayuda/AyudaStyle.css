@@ -1,0 +1,30 @@
+/* Containers */
+
+.container-ayuda{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    align-items: center;
+
+
+
+}
+
+.container-AQ{
+    width: auto;
+    margin-left: 20px;
+    grid-column: 2/4;
+}
+
+.container-menu{
+    padding: 50px;
+    
+}
+
+
+/* Textos */
+
+.title-preguntas{
+    grid-column: 1/5;
+    justify-self: center;
+
+}

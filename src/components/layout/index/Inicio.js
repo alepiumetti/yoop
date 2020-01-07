@@ -5,7 +5,7 @@ import React, { Component } from 'react';
 // Imports Icons
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import {fawhatsapp} from '@fortawesome/free-brands-svg-icons'
+import {faWhatsapp} from '@fortawesome/free-brands-svg-icons'
 
 // Imports IMG
 
@@ -71,8 +71,14 @@ export class Inicio extends Component {
                 <div className="container-marca-amiga">
                   
                   <div className="container-title-btn-marca-amiga">
-                    <p className="title-marca-amiga">Sumate como marca amiga </p>
-                    <a href="http://wpp-redirect.herokuapp.com/go/?p=5493413717471&m=Hola!%20Quiero%20sumarme%20como%20marca%20amiga%20y%20brindar%20descuentos%20a%20los%20asociados."><button className="btn-marca-amiga">Quiero ser parte</button> </a>
+                    <p className="title-marca-amiga">Sumate como marca amiga  </p>
+                    <a href="http://wpp-redirect.herokuapp.com/go/?p=5493413717471&m=Hola!%20Quiero%20sumarme%20como%20marca%20amiga%20y%20brindar%20descuentos%20a%20los%20asociados.">
+                      <button className="btn-marca-amiga">
+                        <p>
+                          Quiero ser parte  <FontAwesomeIcon icon={faWhatsapp}/>
+                        </p>
+                      </button> 
+                    </a>
                   </div>
                   
                   <div className="img-marca-amiga">

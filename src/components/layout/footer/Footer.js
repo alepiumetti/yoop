@@ -24,7 +24,6 @@ export class Footer extends Component {
                     <ul>
                         <li><Link className="btn-footer" to="/" > Inicio </Link></li> 
                         <li><Link className="btn-footer" to="/ayuda"> Ayuda </Link></li>
-                        <li><Link className="btn-footer" to="/contacto"> Contacto </Link></li>
                     </ul>
                 </div>
                 <div className="container-footer-socialmedia">
