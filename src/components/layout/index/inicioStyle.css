@@ -62,7 +62,9 @@
   }
 
   .container-marca-amiga{
-    background-color: #f18179;
+    background: #7F7FD5;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #91EAE4, #86A8E7, #7F7FD5);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #91EAE4, #86A8E7, #7F7FD5); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -97,9 +99,12 @@
   }
 
   .title-marca-amiga{
+    color: azure;
     text-transform: uppercase;
     font-size: 3em;
-    font-weight: 300;
+    font-weight: normal;
+    text-shadow: -2px 2px  rgb(87, 137, 230);
+
   }
 
   
@@ -271,7 +276,7 @@
   }
 
   .title-marca-amiga{
-    font-size: 2em;
+    font-size: 20pt;
   }
 
   /* Imagenes */

@@ -1,23 +1,73 @@
 /* Containers */
 
 .container-ayuda{
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    display: flex;
     align-items: center;
-
-
-
+    justify-items: stretch;
+    width: 100%;
+    flex-direction: column;
+    
 }
 
 .container-AQ{
     width: auto;
     margin-left: 20px;
-    grid-column: 2/4;
+   
+}
+
+.container-menu-general{
+    width: 100%;
+    margin-top: 25px;
+    margin-bottom: 25px;
+    display: flex;
+    justify-content: space-around;
 }
 
 .container-menu{
-    padding: 50px;
-    
+    text-align: center;
+    padding: 25px;
+    border-radius: 10px;
+    font-family: 'Montserrat';
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+
+
+#ayuda-app{
+    background-color: #c5e7e8;
+    transition: 0.5s;
+}
+
+#ayuda-app:hover{
+    background-color:#4db6b9 ;
+}
+
+#ayuda-pagos{
+    background-color:#f6adb6;
+    transition: 0.5s;
+}
+
+#ayuda-pagos:hover{
+    background-color: #ee6677;
+}
+
+#ayuda-desc{
+    background-color: #fcead3;
+    transition: 0.5s;
+}
+
+#ayuda-desc:hover{
+    background-color: #f5bd78;
+}
+
+#ayuda-marcas-amigas {
+    background-color: #b7f4bf;
+    transition: 0.5s;
+}
+
+#ayuda-marcas-amigas:hover{
+    background-color: #4ae35e;
 }
 
 
@@ -26,5 +76,43 @@
 .title-preguntas{
     grid-column: 1/5;
     justify-self: center;
+
+}
+
+a{
+    text-decoration: none;
+    color:black;
+}
+
+.titulo-ayuda-app{
+    color:#4db6b9;
+}
+
+.titulo-ayuda-suscripcion{
+    color:#ee6677
+}
+
+.titulo-ayuda-desc{
+    color:#f5bd78;
+}
+
+.titulo-ayuda-marcas-amigas{
+    color: #4ae35e;
+}
+
+/* MediaQueries */
+
+
+@media screen and (max-width:780px){
+    .container-menu-general{
+        display: flex;
+        flex-direction: column;
+    
+    }
+
+    .container-menu{
+        margin: 15px;
+    }
+
 
 }
