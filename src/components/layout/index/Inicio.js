@@ -82,7 +82,7 @@ export class Inicio extends Component {
                   </div>
                   
                   <div className="img-marca-amiga">
-                    <img src={imgCompra} className="img-marcaamiga" alr="Imagen Marcas amigas" />
+                    <img src={imgCompra} className="img-marcaamiga" alt="Imagen Marcas amigas" />
                   </div>
                 </div>
             </div>

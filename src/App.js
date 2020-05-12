@@ -13,6 +13,9 @@ import Navbar from './components/layout/navbar/Navbar'
 import Inicio from './components/layout/index/Inicio'
 import Footer from './components/layout/footer/Footer'
 import Ayuda from './components/layout/ayuda/Ayuda'
+import Marcas from './components/layout/marcas/Marcas'
+
+import {useFirebaseApp} from 'reactfire'
 
 
 
@@ -39,6 +42,14 @@ class App extends Component {
                 <Footer/>
                 </div>
               }}/>            
+
+              <Route exact path="/marcas" render={
+                ()=>{
+                  return <div>
+                    <Marcas/>
+                  </div>
+                }
+              }/>
           </Router>
       </div>
   }
