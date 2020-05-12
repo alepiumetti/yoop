@@ -2,14 +2,15 @@ import React from "react";
 import "firebase/auth";
 import { useFirebaseApp, useUser } from "reactfire";
 import style from "./Logout.module.css";
-import { Link, ListItem, Button } from "@material-ui/core";
+import { Link, ListItem, Button, IconButton } from "@material-ui/core";
+import ExitToAppIcon from '@material-ui/icons/ExitToApp';
 
 export default props => {
 	const user = useUser();
 	const firebase = useFirebaseApp();
 
 	const style = {
-		textDecoration: "none"
+		color:"white"
 	};
 
 	const logout = async () => {
@@ -21,10 +22,10 @@ export default props => {
 	return (
 		<div>
 			{user && (
-				<Button style={style} onClick={logout}>
-					Cerrar sesión
-				</Button>
-			) //componente principal
+				<IconButton style={style} onClick={logout}>
+					<ExitToAppIcon/>
+				</IconButton>
+			) 
 			}
 		</div>
 	);

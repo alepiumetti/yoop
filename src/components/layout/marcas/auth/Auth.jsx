@@ -63,7 +63,7 @@ export default props => {
 					/>
 				</div>
 				<br />
-				<Button onClick={submit} className={style.btnIS}>
+				<Button onClick={submit} variant="contained" color="default">
 					Iniciar sesión
 				</Button>
 			</div>
