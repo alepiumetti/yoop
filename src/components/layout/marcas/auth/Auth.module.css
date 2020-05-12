@@ -1,0 +1,43 @@
+
+.formField {
+  font-family: inherit;
+  width: 100%;
+  border: 0;
+  border-bottom: 2px solid #4e4e4e;
+  color: #4e4e4e;
+  outline: 0;
+  font-size: 1.2rem;
+  padding: 7px 0;
+  background: transparent;
+
+}
+
+
+.formField:focus {
+  padding-bottom: 6px;  
+  font-weight: 700;
+  border-width: 3px;
+  border-image-slice: 1;
+  color: black;
+}
+
+
+.btnIS{
+  cursor: pointer;
+  background: none;
+  border-style: none;
+  color:#4e4e4e;
+  -webkit-align-self: flex-end;
+  -ms-flex-item-align: end;
+  align-self: flex-end;
+  font-size: 1.2rem;
+  font-weight: 500;
+  -webkit-transition: all .2s ease;
+  transition: all .2s ease;
+}
+
+.btnIS:hover {
+  color: darkgray;
+  -webkit-transition: all .2s ease;
+  transition: all .2s ease;
+}

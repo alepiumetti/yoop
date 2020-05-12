@@ -1,4 +1,4 @@
-const firebaseConfig = {
+export default {
     apiKey: "AIzaSyBi0Mxm90T0q3J8C3rGbXm1XjTjwRneJeo",
     authDomain: "yoop-733b9.firebaseapp.com",
     databaseURL: "https://yoop-733b9.firebaseio.com",
