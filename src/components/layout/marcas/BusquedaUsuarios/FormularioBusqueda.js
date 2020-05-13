@@ -24,6 +24,8 @@ import {
 
 //React Components
 
+import ValidacionDeUsuario from './ValidacionDeUsuario'
+
 
 
 function FormularioBusqueda() {
@@ -39,6 +41,9 @@ function FormularioBusqueda() {
                 </Grid>
                 <Grid item xs={3}>
                     <TextField label="DNI" value={dni}/>
+                </Grid>
+                <Grid item xs={12}>
+                    <ValidacionDeUsuario/>
                 </Grid>
             </Grid>
         </div>
