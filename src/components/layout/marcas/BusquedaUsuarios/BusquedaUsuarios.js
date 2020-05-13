@@ -1,12 +1,19 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+
+// Styles
 import { makeStyles } from '@material-ui/core/styles';
-import AppBar from '@material-ui/core/AppBar';
-import Toolbar from '@material-ui/core/Toolbar';
-import Typography from '@material-ui/core/Typography';
-import Button from '@material-ui/core/Button';
-import IconButton from '@material-ui/core/IconButton';
-import MenuIcon from '@material-ui/icons/Menu';
+
+// Iconos
+import MenuIcon  from '@material-ui/icons/Menu';
+
+//Material UI
+import { Container ,  IconButton , Button , Typography , Toolbar , AppBar} from '@material-ui/core';
+
+// Components 
 import LogOut from "../logout/Logout"
+import FormularioBusqueda from "./FormularioBusqueda"
+
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -36,6 +43,9 @@ export default function ButtonAppBar() {
           <LogOut/>
         </Toolbar>
       </AppBar>
+      <Container>
+          <FormularioBusqueda/>
+      </Container>
     </div>
   );
 }
