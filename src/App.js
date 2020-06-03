@@ -14,6 +14,7 @@ import Inicio from './components/layout/index/Inicio'
 import Footer from './components/layout/footer/Footer'
 import Ayuda from './components/layout/ayuda/Ayuda'
 import Marcas from './components/layout/marcas/Marcas'
+import Asociate from './components/layout/asociate/Asociate'
 
 import {useFirebaseApp} from 'reactfire'
 
@@ -47,6 +48,14 @@ class App extends Component {
                 ()=>{
                   return <div>
                     <Marcas/>
+                  </div>
+                }
+              }/>
+              <Route exacto path="/asociate" render={
+                () => {
+                  return <div>
+                    <Navbar/>
+                    <Asociate/>
                   </div>
                 }
               }/>

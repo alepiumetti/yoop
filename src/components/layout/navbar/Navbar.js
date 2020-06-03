@@ -16,6 +16,7 @@ export class Navbar extends Component {
               <nav className='nav'>
                   <Link className="btn-nav" to="/" > Inicio </Link> 
                   <Link className="btn-nav" to="/ayuda"> Ayuda </Link>
+                  <Link className="btn-nav" to="/asociate"> Asociate </Link>
                   </nav>
             </div>
         )
