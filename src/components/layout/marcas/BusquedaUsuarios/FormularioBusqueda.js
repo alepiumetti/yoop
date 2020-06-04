@@ -64,12 +64,10 @@ function FormularioBusqueda() {
       {getUser && (
         <Grid container spacing={2}>
           <Grid item xs={3}>
-            <ValidacionDeUsuario usuario={nombre} dni={dni} />
+            <ValidacionDeUsuario usuario={nombre} dni={dni} getUser={get_user}/>
           </Grid>
           <Grid item xs={12}>
-            <Button onClick={get_user} variant="contained">
-              Volver
-            </Button>
+            
           </Grid>
         </Grid>
       )}

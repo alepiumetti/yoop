@@ -1,11 +1,15 @@
 import React, { useState, useEffect } from "react";
 import * as firebase from "firebase";
+import { Button } from "@material-ui/core";
+import Moment from 'react-moment'
 
 function ValidacionDeUsuario(props) {
-  const [usuario, setUsuario] = useState(props.usuario);
+  const [usuario, setUsuario] = useState();
   const [DNI, setDNI] = useState(props.dni);
-  const [usuarios, setUsuarios] = useState();
   const [loading, setLoading] = useState(false);
+  const [loadPago, setPago] = useState(false);
+  const [nombre, setNombre] = useState(props.usuario)
+  
 
   const listenForUsers = async () => {
     let lista = [];
@@ -31,8 +35,29 @@ function ValidacionDeUsuario(props) {
         alert("Carga incompleta");
       }
     );
-    setUsuarios(lista);
     setLoading(true);
+    await buscarUsuario(lista);
+  };
+
+  const buscarUsuario = (listaUsuarios) => {
+    let lista = listaUsuarios;
+    let nombreState = nombre.toLowerCase();
+    let dni = DNI.toLowerCase();
+
+    lista.forEach((element) => {
+      let nombreElement = element.nombre.toLowerCase();
+      console.log(element)
+      let dniElement = element.dni;
+      if (nombre !== "") {
+        if (nombreElement.includes(nombre) || dniElement === dni) {
+          console.log(element.pago.toString());
+          setUsuario(element)
+          setPago(true);
+        }
+      } else {
+        console.log("no existe");
+      }
+    });
   };
 
   useEffect(() => {
@@ -40,10 +65,21 @@ function ValidacionDeUsuario(props) {
   }, []);
 
   return (
-    <div>
-      nombre: {usuario}
-      <br />
-      dni: {DNI}
+    <div >
+      {loadPago && (
+        <div style={{margin:"auto"}}>
+          nombre: {usuario.nombre}
+          <br />
+          dni: {usuario.dni}
+          <br />
+          pago:{usuario.pago.toString()}
+          <br />
+          <Moment local format="DD/MM/YYYY"/>
+        </div>
+      )}
+      <Button onClick={props.getUser} variant="contained">
+              Volver
+      </Button>
     </div>
   );
 }
