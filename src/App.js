@@ -17,6 +17,7 @@ import Marcas from './components/layout/marcas/Marcas'
 import Asociate from './components/layout/asociate/Asociate'
 
 import {useFirebaseApp} from 'reactfire'
+import MarcasAmigas from './components/layout/marcas amigas/MarcasAmigas';
 
 
 
@@ -51,11 +52,19 @@ class App extends Component {
                   </div>
                 }
               }/>
-              <Route exacto path="/asociate" render={
+              <Route exact path="/asociate" render={
                 () => {
                   return <div>
                     <Navbar/>
                     <Asociate/>
+                  </div>
+                }
+              }/>
+              <Route exact path="/marcas-amigas/:id" render={
+                () => {
+                  return <div>
+                    <Navbar/>
+                    <MarcasAmigas/>
                   </div>
                 }
               }/>

@@ -1,5 +1,5 @@
 import React from 'react'
-import { Grid } from '@material-ui/core'
+import { Grid, TextField } from '@material-ui/core'
 
 function Asociate() {
     return (
@@ -15,7 +15,7 @@ function Asociate() {
                     por 6 meses
                 </Grid>
                 <Grid item xs={3}>
-                    por un año
+                    por 1 año
                 </Grid>
             </Grid>
 

@@ -21,10 +21,13 @@ import { TextField, Typography, Button, Grid } from "@material-ui/core";
 
 import ValidacionDeUsuario from "./ValidacionDeUsuario";
 
+
 function FormularioBusqueda() {
   const [nombre, setNombre] = useState(""); //se ingresa el nombre y/ apellido
   const [dni, setDni] = useState(""); //se ingresa el DNI
   const [getUser, setGetUser] = useState(false); // es lo que determina cuando se busca a alguien para que pida al servidor
+
+
 
   const handleNombre = (e) => {
     let valor = e.target.value;
@@ -43,27 +46,27 @@ function FormularioBusqueda() {
   return (
     <div className={style.container}>
       {!getUser && (
-        <Grid container spacing={2}>
-          <Grid item xs={3}>
+        <div className={style.form}>
+          <div >
             <TextField
-              label="Nombre y Apellido"
+              label="Nombre y apellido"
               value={nombre}
               onChange={handleNombre}
             />
-          </Grid>
-          <Grid item xs={3}>
+          </div>
+          <div>
             <TextField label="DNI" value={dni} onChange={handleDNI} />
-          </Grid>
-          <Grid item xs={3}>
-            <Button variant="contained" color="default" onClick={get_user}>
+          </div>
+          <div className={style.containerBtn}>
+            <Button className={style.btnBuscar} variant="contained" color="default" onClick={get_user}>
               Buscar
             </Button>
-          </Grid>
-        </Grid>
+          </div>
+        </div>
       )}
       {getUser && (
-        <Grid container spacing={2}>
-          <Grid item xs={3}>
+        <Grid className={style.containerValidacion} container spacing={2}>
+          <Grid className={style.contairnerDatos} item xs={3}>
             <ValidacionDeUsuario usuario={nombre} dni={dni} getUser={get_user}/>
           </Grid>
           <Grid item xs={12}>

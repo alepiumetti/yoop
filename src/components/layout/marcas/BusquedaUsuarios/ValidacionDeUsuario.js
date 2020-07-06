@@ -3,6 +3,11 @@ import * as firebase from "firebase";
 import { Button } from "@material-ui/core";
 import Moment from 'react-moment'
 
+import style from "./ValidacionDelUsuarioStyle.module.css"
+
+
+
+
 function ValidacionDeUsuario(props) {
   const [usuario, setUsuario] = useState();
   const [DNI, setDNI] = useState(props.dni);
@@ -11,7 +16,7 @@ function ValidacionDeUsuario(props) {
   const [nombre, setNombre] = useState(props.usuario)
   
 
-  const listenForUsers = async () => {
+  const listenForUsers = () => {
     let lista = [];
     const itemsRef = firebase.database().ref("usuarios");
     itemsRef.on(
@@ -34,22 +39,23 @@ function ValidacionDeUsuario(props) {
       function (errorObject) {
         alert("Carga incompleta");
       }
-    );
-    setLoading(true);
-    await buscarUsuario(lista);
+    )
+      buscarUsuario(lista);
+    
   };
+
 
   const buscarUsuario = (listaUsuarios) => {
     let lista = listaUsuarios;
     let nombreState = nombre.toLowerCase();
-    let dni = DNI.toLowerCase();
+    let dni =DNI;
 
     lista.forEach((element) => {
       let nombreElement = element.nombre.toLowerCase();
       console.log(element)
       let dniElement = element.dni;
-      if (nombre !== "") {
-        if (nombreElement.includes(nombre) || dniElement === dni) {
+      if (nombre !== "" || DNI !== "") {
+        if (nombreElement.includes(nombreState) || dniElement === dni) {
           console.log(element.pago.toString());
           setUsuario(element)
           setPago(true);
@@ -58,28 +64,48 @@ function ValidacionDeUsuario(props) {
         console.log("no existe");
       }
     });
+    setLoading(true);
+
   };
 
-  useEffect(() => {
+  console.log('DNI :>> ', DNI);
+
+
+  useEffect( () => {
     listenForUsers();
   }, []);
 
   return (
     <div >
-      {loadPago && (
-        <div style={{margin:"auto"}}>
-          nombre: {usuario.nombre}
+      {loadPago && usuario.pago &&(
+        <div className={style.containerValido }>
+          Nombre y Apellido: {usuario.nombre}
           <br />
-          dni: {usuario.dni}
+          DNI: {usuario.dni}
           <br />
           pago:{usuario.pago.toString()}
           <br />
           <Moment local format="DD/MM/YYYY"/>
         </div>
       )}
-      <Button onClick={props.getUser} variant="contained">
+      {loadPago && !usuario.pago &&(
+        <div className={style.containerInvalido}>
+            Nombre y Apellido: {usuario.nombre}
+          <br />
+          DNI: {usuario.dni}
+          <br />
+          pago:{usuario.pago.toString()}
+          <br />
+          <Moment local format="DD/MM/YYYY"/>
+          
+        </div>
+      )}
+
+<Button onClick={props.getUser} variant="contained">
               Volver
       </Button>
+
+
     </div>
   );
 }

@@ -1,0 +1,7 @@
+.containerValido{
+    background-color: lightgreen;
+}
+
+.containerInvalido{
+    background-color: lightsalmon;
+}
