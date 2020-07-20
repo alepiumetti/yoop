@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {BrowserRouter as Router, Route} from 'react-router-dom';
+import {BrowserRouter as Router, Route , Switch} from 'react-router-dom';
 
 
 //Style
@@ -26,8 +26,7 @@ class App extends Component {
 
   render(){
     return <div className="App">
-          
-          <Router>
+          <Switch>
             
               <Route exact path="/" render={()=> {
                 return <div className="container"> 
@@ -68,7 +67,7 @@ class App extends Component {
                   </div>
                 }
               }/>
-          </Router>
+          </Switch>
       </div>
   }
 

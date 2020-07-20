@@ -2,6 +2,8 @@ import React, { Suspense } from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
+import {BrowserRouter as Router} from 'react-router-dom';
+
 
 import firebaseConfig from "./firebase-config"
 
@@ -11,7 +13,9 @@ ReactDOM.render(
     (
         <FirebaseAppProvider firebaseConfig={firebaseConfig}>
             <Suspense fallback={"Conectando"}>  
-                <App/>
+                <Router>
+                    <App/>
+                </Router>
             </Suspense>
         </FirebaseAppProvider>
     )

@@ -9,17 +9,17 @@ import style from "./ValidacionDelUsuarioStyle.module.css"
 
 
 function ValidacionDeUsuario(props) {
-  const [usuario, setUsuario] = useState();
-  const [DNI, setDNI] = useState(props.dni);
+  const [usuario, setUsuario] = useState(); //Datos completos del usuario
+  const [DNI, setDNI] = useState(props.dni); //DNI del Usuario que se busca
   const [loading, setLoading] = useState(false);
-  const [loadPago, setPago] = useState(false);
-  const [nombre, setNombre] = useState(props.usuario)
+  const [loadPago, setPago] = useState(false); 
+  const [nombre, setNombre] = useState(props.usuario) //Nombre del usuario que se busca
   
 
-  const listenForUsers = () => {
-    let lista = [];
-    const itemsRef = firebase.database().ref("usuarios");
-    itemsRef.on(
+  const listenForUsers = () => {  //Lee todos los usuarios de la DB
+    let lista = []; // Crea una lista para guardarlos 
+    const itemsRef = firebase.database().ref("usuarios"); //Se crea la referencia a la DB
+    itemsRef.on(  //Se leen los datos y se guardan en lista
       "value",
       function (snapshot) {
         snapshot.forEach((child) => {
@@ -37,30 +37,38 @@ function ValidacionDeUsuario(props) {
         });
       },
       function (errorObject) {
-        alert("Carga incompleta");
+        alert("Carga incompleta"); 
       }
     )
-      buscarUsuario(lista);
+      buscarUsuario(lista); //LLama a función Buscar usuario con la lista de todos los usuarios cómo parámetro
     
   };
 
 
-  const buscarUsuario = (listaUsuarios) => {
-    let lista = listaUsuarios;
-    let nombreState = nombre.toLowerCase();
-    let dni =DNI;
+  const buscarUsuario = (listaUsuarios) => { 
+    let lista = listaUsuarios; //Guarda el parámetro en una variable
+    let nombreState = nombre.toLowerCase(); //Pasa el nombre del input a minusculas
+    let dni =DNI; 
 
     lista.forEach((element) => {
-      let nombreElement = element.nombre.toLowerCase();
-      console.log(element)
+      let nombreElement = element.nombre.toLowerCase(); //Se guarda el 
+      console.log("element" ,element)
       let dniElement = element.dni;
-      if (nombre !== "" || DNI !== "") {
-        if (nombreElement.includes(nombreState) || dniElement === dni) {
+      if (nombre !== "") {
+        if (nombreElement.includes(nombreState)) {
           console.log(element.pago.toString());
           setUsuario(element)
           setPago(true);
         }
-      } else {
+      }
+      else if(DNI !== ""){
+        if (dniElement === dni)
+        console.log(element.pago.toString());
+        setUsuario(element)
+        setPago(true);
+      }
+
+      else {
         console.log("no existe");
       }
     });
