@@ -15,7 +15,7 @@ function Asociate() {
                     por 6 meses
                 </Grid>
                 <Grid item xs={3}>
-                    por 1 año
+                    por 1 año y medio
                 </Grid>
             </Grid>
 
