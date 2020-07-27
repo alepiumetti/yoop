@@ -4,7 +4,7 @@
 
 //React - React Router - React Fire - Firebase
 
-import React, { useState } from "react";
+import React, { useState, Suspense, lazy } from "react";
 import * as firebase from "firebase";
 
 // Styles
@@ -22,12 +22,11 @@ import { TextField, Typography, Button, Grid } from "@material-ui/core";
 import ValidacionDeUsuario from "./ValidacionDeUsuario";
 
 
+
 function FormularioBusqueda() {
   const [nombre, setNombre] = useState(""); //se ingresa el nombre y/ apellido
   const [dni, setDni] = useState(""); //se ingresa el DNI
   const [getUser, setGetUser] = useState(false); // es lo que determina cuando se busca a alguien para que pida al servidor
-
-
 
   const handleNombre = (e) => {
     let valor = e.target.value;
@@ -47,7 +46,7 @@ function FormularioBusqueda() {
     <div className={style.container}>
       {!getUser && (
         <div className={style.form}>
-          <div >
+          <div>
             <TextField
               label="Nombre y apellido"
               value={nombre}
@@ -58,7 +57,12 @@ function FormularioBusqueda() {
             <TextField label="DNI" value={dni} onChange={handleDNI} />
           </div>
           <div className={style.containerBtn}>
-            <Button className={style.btnBuscar} variant="contained" color="default" onClick={get_user}>
+            <Button
+              className={style.btnBuscar}
+              variant="contained"
+              color="default"
+              onClick={get_user}
+            >
               Buscar
             </Button>
           </div>
@@ -67,11 +71,13 @@ function FormularioBusqueda() {
       {getUser && (
         <Grid className={style.containerValidacion} container spacing={2}>
           <Grid className={style.contairnerDatos} item xs={3}>
-            <ValidacionDeUsuario usuario={nombre} dni={dni} getUser={get_user}/>
+              <ValidacionDeUsuario
+                usuario={nombre}
+                dni={dni}
+                getUser={get_user}
+              />
           </Grid>
-          <Grid item xs={12}>
-            
-          </Grid>
+          <Grid item xs={12}></Grid>
         </Grid>
       )}
     </div>
