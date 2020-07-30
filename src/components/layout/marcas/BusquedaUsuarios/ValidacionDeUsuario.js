@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import * as firebase from "firebase";
-import { Button } from "@material-ui/core";
+import { Button, CircularProgress, Typography } from "@material-ui/core";
 import Moment from "react-moment";
 import {useList, useListVals} from 'react-firebase-hooks/database'
 
@@ -65,41 +65,63 @@ function ValidacionDeUsuario(props) {
     buscarUsuario()
   }, [loading])
 
+  const convertPago = (pago) =>{
+    if (pago === true){
+      return <Typography>Está al día</Typography>
+    }
+    else{
+      return <Typography>No está al día</Typography>
+    }
+  }
+
 
   return (
     <div>
       {loadPago && usuario.pago && (
         <div className={style.containerValido}>
-          Nombre y Apellido: {usuario.nombre}
+          <Typography variant="h6">{usuario.nombre}</Typography>
+          
+          <Typography variant="body1">DNI: {usuario.dni}</Typography>
           <br />
-          DNI: {usuario.dni}
-          <br />
-          pago:{usuario.pago.toString()}
+          {convertPago(usuario.pago)}
           <br />
           <Moment local format="DD/MM/YYYY" />
+          <br/>
+          <Button onClick={props.getUser} variant="contained">
+            Volver
+          </Button>
         </div>
       )}
       {loadPago && !usuario.pago && (
         <div className={style.containerInvalido}>
-          Nombre y Apellido: {usuario.nombre}
-          <br />
-          DNI: {usuario.dni}
+          <Typography variant="h6">{usuario.nombre}</Typography>
+          
+          <Typography variant="body1">DNI: {usuario.dni}</Typography>
           <br />
           pago:{usuario.pago.toString()}
           <br />
           <Moment local format="DD/MM/YYYY" />
+          <br />
+          <Button onClick={props.getUser} variant="contained">
+            Volver
+          </Button>
         </div>
       )}
 
       {noUser && !loadPago &&(
         <div>
           <p>El usuario no existe o los datos son erroneos</p>
+          <Button onClick={props.getUser} variant="contained">
+            Volver
+          </Button>
         </div>
+        
       )}
 
-      <Button onClick={props.getUser} variant="contained">
-        Volver
-      </Button>
+      {loading && (
+        <CircularProgress/>
+      )}
+      
     </div>
   );
 }
