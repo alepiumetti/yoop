@@ -43,7 +43,7 @@ export default function ButtonAppBar() {
           <LogOut/>
         </Toolbar>
       </AppBar>
-      <Container>
+      <Container >
           <FormularioBusqueda/>
       </Container>
     </div>

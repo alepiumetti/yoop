@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
 import * as firebase from "firebase";
-import { Button, CircularProgress, Typography } from "@material-ui/core";
+import { Button, CircularProgress, Typography, Card, CardContent, Divider } from "@material-ui/core";
 import Moment from "react-moment";
 import {useList, useListVals} from 'react-firebase-hooks/database'
+import CheckIcon from '@material-ui/icons/Check';
 
 import style from "./ValidacionDelUsuarioStyle.module.css";
 
@@ -78,23 +79,38 @@ function ValidacionDeUsuario(props) {
   return (
     <div>
       {loadPago && usuario.pago && (
-        <div className={style.containerValido}>
-          <Typography variant="h6">{usuario.nombre}</Typography>
-          
-          <Typography variant="body1">DNI: {usuario.dni}</Typography>
-          <br />
-          {convertPago(usuario.pago)}
-          <br />
-          <Moment local format="DD/MM/YYYY" />
-          <br/>
-          <Button onClick={props.getUser} variant="contained">
-            Volver
-          </Button>
+        <div className={style.containerCard}>
+          <div className={style.containerSuccess}>
+            <CheckIcon style={{color:"#FFF",fontSize:"120px"}}/>
+          </div>
+          <div className={style.containerUser}>
+            <Typography variant="h5">{usuario.nombre}</Typography>
+            <Divider style={{margin:"5px 0px 5px 0px"}}/>
+            <Typography variant="body1">DNI: {usuario.dni}</Typography>
+            <Typography variant="body1">Teléfono: {usuario.tel}</Typography>
+            <Button onClick={props.getUser} variant="contained">
+              Volver
+            </Button>
+          </div>
         </div>
+
+        // <div className={style.containerValido}>
+        //   <p className={style.nombreValido}>{usuario.nombre}</p>
+          
+        //   <Typography variant="body1">DNI: {usuario.dni}</Typography>
+        //   <br />
+        //   {convertPago(usuario.pago)}
+        //   <br />
+        //   <Moment local format="DD/MM/YYYY" />
+        //   <br/>
+        //   <Button onClick={props.getUser} variant="contained">
+        //     Volver
+        //   </Button>
+        // </div>
       )}
       {loadPago && !usuario.pago && (
         <div className={style.containerInvalido}>
-          <Typography variant="h6">{usuario.nombre}</Typography>
+          <Typography  variant="h6">{usuario.nombre}</Typography>
           
           <Typography variant="body1">DNI: {usuario.dni}</Typography>
           <br />

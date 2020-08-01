@@ -1,50 +1,26 @@
-.containerValido {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    flex-direction: column;
-
-    height: 250px;
-    width: 250px;
-
-  border-radius: 20% 23% 46% 24% / 29% 43% 16% 29%;
-  background: rgba(210, 255, 82, 1);
-  background: -moz-linear-gradient(
-    left,
-    rgba(210, 255, 82, 1) 0%,
-    rgba(145, 232, 66, 1) 100%
-  );
-  background: -webkit-gradient(
-    left top,
-    right top,
-    color-stop(0%, rgba(210, 255, 82, 1)),
-    color-stop(100%, rgba(145, 232, 66, 1))
-  );
-  background: -webkit-linear-gradient(
-    left,
-    rgba(210, 255, 82, 1) 0%,
-    rgba(145, 232, 66, 1) 100%
-  );
-  background: -o-linear-gradient(
-    left,
-    rgba(210, 255, 82, 1) 0%,
-    rgba(145, 232, 66, 1) 100%
-  );
-  background: -ms-linear-gradient(
-    left,
-    rgba(210, 255, 82, 1) 0%,
-    rgba(145, 232, 66, 1) 100%
-  );
-  background: linear-gradient(
-    to right,
-    rgba(210, 255, 82, 1) 0%,
-    rgba(145, 232, 66, 1) 100%
-  );
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d2ff52', endColorstr='#91e842', GradientType=1 );
+.containerCard{
+  width:450px;
+  height: 150px;
+  border-style: solid;
+  border-radius: 15px;
+  border-color: black;
+  border-width: thin;
+  display: flex;
+  flex-direction: row;
 }
 
-.containerInvalido {
-  background-color: lightsalmon;
-  border-radius: 20% 23% 46% 24% / 29% 43% 16% 29%;
+.containerSuccess{
+  border-radius: 15px 0px 0px 15px;
+  width: 35%;
+  height: 100%;
+  background-color:#62BF4D ;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.containerUser{
+  height: 100%;
+  width: 65%;
+  padding: 15px;
 }

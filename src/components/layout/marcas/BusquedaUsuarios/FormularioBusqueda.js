@@ -83,5 +83,4 @@ function FormularioBusqueda() {
     </div>
   );
 }
-
 export default FormularioBusqueda;
