@@ -4,18 +4,15 @@ import { Grid, TextField } from '@material-ui/core'
 function Asociate() {
     return (
         <div>
-            <Grid container spacing={2} justify="center">
-                <Grid item xs={3}>
+            <Grid container spacing={2} justify="center" align="center">
+                <Grid item xs={4}>
                     por 1 mes
                 </Grid>
-                <Grid item xs={3}>
-                    por 3 meses
-                </Grid>
-                <Grid item xs={3}>
+                <Grid item xs={4}>
                     por 6 meses
                 </Grid>
-                <Grid item xs={3}>
-                    por 1 año
+                <Grid item xs={4}>
+                    por 12 meses
                 </Grid>
             </Grid>
 

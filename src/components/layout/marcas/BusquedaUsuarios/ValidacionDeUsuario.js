@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import * as firebase from "firebase";
-import { Button, CircularProgress, Typography, Card, CardContent, Divider } from "@material-ui/core";
+import { Button, CircularProgress, Typography, Card, CardContent, Divider, Fade } from "@material-ui/core";
 import Moment from "react-moment";
 import {useList, useListVals} from 'react-firebase-hooks/database'
 import CheckIcon from '@material-ui/icons/Check';
@@ -80,21 +80,23 @@ function ValidacionDeUsuario(props) {
   return (
     <div>
       {loadPago && usuario.pago && (
-        <div className={style.containerCard}>
-          <div className={style.containerSuccess}>
-            <CheckIcon style={{color:"#FFF",fontSize:"120px"}}/>
+        <Fade in={loadPago}>
+          <div className={style.containerCard}>
+            
+              <div className={style.containerSuccess}>
+                <CheckIcon style={{color:"#FFF",fontSize:"120px"}}/>
+              </div>
+              <div className={style.containerUser}>
+                <Typography variant="h5">{usuario.nombre}</Typography>
+                <Divider style={{margin:"5px 0px 5px 0px"}}/>
+                <Typography variant="body1">DNI: {usuario.dni}</Typography>
+                <Typography variant="body1">Teléfono: {usuario.tel}</Typography>
+                <Button onClick={props.getUser} variant="contained">
+                  Volver
+                </Button>
+              </div>
           </div>
-          <div className={style.containerUser}>
-            <Typography variant="h5">{usuario.nombre}</Typography>
-            <Divider style={{margin:"5px 0px 5px 0px"}}/>
-            <Typography variant="body1">DNI: {usuario.dni}</Typography>
-            <Typography variant="body1">Teléfono: {usuario.tel}</Typography>
-            <Button onClick={props.getUser} variant="contained">
-              Volver
-            </Button>
-          </div>
-        </div>
-
+        </Fade>
         // <div className={style.containerValido}>
         //   <p className={style.nombreValido}>{usuario.nombre}</p>
           
@@ -110,20 +112,22 @@ function ValidacionDeUsuario(props) {
         // </div>
       )}
       {loadPago && !usuario.pago && (
-        <div className={style.containerCard}>
-        <div className={style.containerFailed}>
-          <CloseIcon style={{color:"#FFF",fontSize:"120px"}}/>
+        <Fade in={loadPago}>
+          <div className={style.containerCard}>
+          <div className={style.containerFailed}>
+            <CloseIcon style={{color:"#FFF",fontSize:"120px"}}/>
+          </div>
+          <div className={style.containerUser}>
+            <Typography variant="h5">{usuario.nombre}</Typography>
+            <Divider style={{margin:"5px 0px 5px 0px"}}/>
+            <Typography variant="body1">DNI: {usuario.dni}</Typography>
+            <Typography variant="body1">Teléfono: {usuario.tel}</Typography>
+            <Button onClick={props.getUser} variant="contained">
+              Volver
+            </Button>
+          </div>
         </div>
-        <div className={style.containerUser}>
-          <Typography variant="h5">{usuario.nombre}</Typography>
-          <Divider style={{margin:"5px 0px 5px 0px"}}/>
-          <Typography variant="body1">DNI: {usuario.dni}</Typography>
-          <Typography variant="body1">Teléfono: {usuario.tel}</Typography>
-          <Button onClick={props.getUser} variant="contained">
-            Volver
-          </Button>
-        </div>
-      </div>
+      </Fade>
       )}
 
       {noUser && !loadPago &&(
