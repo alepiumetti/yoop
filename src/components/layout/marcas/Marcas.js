@@ -5,7 +5,6 @@ import { Container, Grid, Typography} from "@material-ui/core";
 import style from "./marcasStyle.module.css"
 
 import Logo from "../../img/logo yoop.svg";
-
 import Auth from "./auth/Auth"
 import BusquedaUsuarios from "./BusquedaUsuarios/BusquedaUsuarios"
 

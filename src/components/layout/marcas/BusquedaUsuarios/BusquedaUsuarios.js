@@ -6,7 +6,6 @@ import { makeStyles } from '@material-ui/core/styles';
 
 // Iconos
 import MenuIcon  from '@material-ui/icons/Menu';
-import HelpIcon from '@material-ui/icons/Help';
 
 //Material UI
 import { Container ,  IconButton , Typography , Toolbar , AppBar} from '@material-ui/core';
@@ -14,6 +13,7 @@ import { Container ,  IconButton , Typography , Toolbar , AppBar} from '@materia
 // Components 
 import LogOut from "../logout/Logout"
 import FormularioBusqueda from "./FormularioBusqueda"
+import DialogAyuda from ".././ayudaMarcas/DialogAyuda"
 
 
 const useStyles = makeStyles((theme) => ({
@@ -47,9 +47,8 @@ export default function ButtonAppBar() {
       <Container >
           <FormularioBusqueda/>
       </Container>
-      <IconButton aria-label="help" onClick={() => {alert("ayuda")}}>
-        <HelpIcon/>
-      </IconButton>
+      <DialogAyuda/>
+
     </div>
   );
 }
