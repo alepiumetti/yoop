@@ -31,7 +31,7 @@ export class Inicio extends Component {
                 <div className="banner-header">
                   <div className="container-title-btn">
                     <h1 className="title-banner">
-                      La primera comunidad de descuentos para pasteleros
+                      La primera comunidad de descuentos para pastelería
                     </h1>
                       <div className="container-btn">
                         <button className="btn-descarga" type='button'>Proximamente</  button>

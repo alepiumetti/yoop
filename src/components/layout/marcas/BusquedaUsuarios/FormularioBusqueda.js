@@ -38,6 +38,8 @@ function FormularioBusqueda() {
     setDni(valor);
   };
 
+
+
   const get_user = () => {
     setGetUser(!getUser);
   };
@@ -61,7 +63,12 @@ function FormularioBusqueda() {
               className={style.btnBuscar}
               variant="contained"
               color="default"
-              onClick={get_user}
+              onClick={() =>{
+                if ((dni === "") && (nombre==="")){
+                alert("Debe ingresar algun dato de los usuarios. Si tenés dudas podés clickear en el signo de pregunta abajo a la izquierda" )
+              }else{
+                get_user()
+              }}}
             >
               Buscar
             </Button>

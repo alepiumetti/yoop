@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-import { Container, Grid, Typography} from "@material-ui/core";
+import { Container, Grid, Typography, Tooltip} from "@material-ui/core";
 
 import style from "./marcasStyle.module.css"
 
@@ -26,7 +26,7 @@ function Marcas() {
       </Grid>
           <div className={style.container}>
             <div className={style.containerLogin}>
-              <Auth/>
+                <Auth/>
             </div>
           </div>
     </div>)
