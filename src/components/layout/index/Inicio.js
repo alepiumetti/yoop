@@ -34,7 +34,7 @@ export class Inicio extends Component {
                       La primera comunidad de descuentos para pasteleros
                     </h1>
                       <div className="container-btn">
-                        <a href="https://www.google.com"><button className="btn-descarga" type='button'>Descargá la app</  button></a>
+                        <button className="btn-descarga" type='button'>Proximamente</  button>
                         <img src={logoGooglePlay} className="logoGooglePlay-header" alt=""/>
 
                       </div>
@@ -51,16 +51,17 @@ export class Inicio extends Component {
                   <div className="container-pasos">
                     <div className="paso-descarga">
                       <img src={iconoSmartphone} className="img-paso-descarga" alt="" />
-                      <p className="description-paso-descarga">Descargás la app</p>
-                    </div>
-                    <div className="paso-descarga">
-                      <img src={iconoQr} className="img-paso-descarga" alt="" />
-                      <p className="description-paso-descarga">Te suscribis y obtenés tu QR</p>
+                      <p className="description-paso-descarga">Descargás la app y te asocias</p>
                     </div>
                     <div className="paso-descarga">
                       <img src={iconoSmartphoneDesc} className="img-paso-descarga" alt="" />
                       <p className="description-paso-descarga">Buscás las marcas amigas</p>
                     </div>
+                    <div className="paso-descarga">
+                      <img src={iconoQr} className="img-paso-descarga" alt="" />
+                      <p className="description-paso-descarga">Escaneas el QR</p>
+                    </div>
+                    
                     <div className="paso-descarga">
                       <img src={iconoBags} className="img-paso-descarga" alt="" />
                       <p className="description-paso-descarga">Comprás con descuento</p>

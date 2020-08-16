@@ -24,3 +24,13 @@
   width: 65%;
   padding: 15px;
 }
+
+.containerFailed{
+  border-radius: 15px 0px 0px 15px;
+  width: 35%;
+  height: 100%;
+  background-color:#BF6660 ;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

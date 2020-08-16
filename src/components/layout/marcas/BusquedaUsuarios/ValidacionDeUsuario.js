@@ -4,6 +4,7 @@ import { Button, CircularProgress, Typography, Card, CardContent, Divider } from
 import Moment from "react-moment";
 import {useList, useListVals} from 'react-firebase-hooks/database'
 import CheckIcon from '@material-ui/icons/Check';
+import CloseIcon from '@material-ui/icons/Close';
 
 import style from "./ValidacionDelUsuarioStyle.module.css";
 
@@ -109,19 +110,20 @@ function ValidacionDeUsuario(props) {
         // </div>
       )}
       {loadPago && !usuario.pago && (
-        <div className={style.containerInvalido}>
-          <Typography  variant="h6">{usuario.nombre}</Typography>
-          
+        <div className={style.containerCard}>
+        <div className={style.containerFailed}>
+          <CloseIcon style={{color:"#FFF",fontSize:"120px"}}/>
+        </div>
+        <div className={style.containerUser}>
+          <Typography variant="h5">{usuario.nombre}</Typography>
+          <Divider style={{margin:"5px 0px 5px 0px"}}/>
           <Typography variant="body1">DNI: {usuario.dni}</Typography>
-          <br />
-          pago:{usuario.pago.toString()}
-          <br />
-          <Moment local format="DD/MM/YYYY" />
-          <br />
+          <Typography variant="body1">Teléfono: {usuario.tel}</Typography>
           <Button onClick={props.getUser} variant="contained">
             Volver
           </Button>
         </div>
+      </div>
       )}
 
       {noUser && !loadPago &&(
