@@ -67,16 +67,6 @@ function ValidacionDeUsuario(props) {
     buscarUsuario()
   }, [loading])
 
-  const convertPago = (pago) =>{
-    if (pago === true){
-      return <Typography>Está al día</Typography>
-    }
-    else{
-      return <Typography>No está al día</Typography>
-    }
-  }
-
-
   return (
     <div>
       {loadPago && usuario.pago && (
@@ -97,19 +87,7 @@ function ValidacionDeUsuario(props) {
               </div>
           </div>
         </Fade>
-        // <div className={style.containerValido}>
-        //   <p className={style.nombreValido}>{usuario.nombre}</p>
-          
-        //   <Typography variant="body1">DNI: {usuario.dni}</Typography>
-        //   <br />
-        //   {convertPago(usuario.pago)}
-        //   <br />
-        //   <Moment local format="DD/MM/YYYY" />
-        //   <br/>
-        //   <Button onClick={props.getUser} variant="contained">
-        //     Volver
-        //   </Button>
-        // </div>
+
       )}
       {loadPago && !usuario.pago && (
         <Fade in={loadPago}>
