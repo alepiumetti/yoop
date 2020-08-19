@@ -38,7 +38,7 @@ class App extends Component {
             }}/>
 
               <Route exact path="/ayuda" render={()=>{
-                return  <div> 
+                return  <div > 
                 <Navbar/>
                 <Ayuda/>
                 <Footer/>
@@ -54,17 +54,11 @@ class App extends Component {
               }/>
               <Route exact path="/asociate" render={
                 () => {
-                  return <Grid container>
-                    <Grid item xs={12}>
+                  return <div className="containerAsociate">
                     <Navbar/>
-                    </Grid>
-                    <Grid item xs={12}>
                     <Asociate/>
-                    </Grid>
-                    <Grid item xs={12}>
                     <Footer/>
-                    </Grid>
-                  </Grid>
+                  </div>
                 }
               }/>
               <Route exact path="/marcas-amigas/:id" render={
