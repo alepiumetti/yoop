@@ -18,6 +18,7 @@ import Asociate from './components/layout/asociate/Asociate'
 
 import {useFirebaseApp} from 'reactfire'
 import MarcasAmigas from './components/layout/marcas amigas/MarcasAmigas';
+import { Grid } from '@material-ui/core';
 
 
 
@@ -53,11 +54,17 @@ class App extends Component {
               }/>
               <Route exact path="/asociate" render={
                 () => {
-                  return <div>
+                  return <Grid container>
+                    <Grid item xs={12}>
                     <Navbar/>
+                    </Grid>
+                    <Grid item xs={12}>
                     <Asociate/>
+                    </Grid>
+                    <Grid item xs={12}>
                     <Footer/>
-                  </div>
+                    </Grid>
+                  </Grid>
                 }
               }/>
               <Route exact path="/marcas-amigas/:id" render={

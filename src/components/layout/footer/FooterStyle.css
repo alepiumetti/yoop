@@ -21,7 +21,7 @@
     background-color: #000 ;
     height: auto;
     position: relative;
-    top: 0px;
+    bottom: 0px;
 
     display: flex;
     flex-direction: row;

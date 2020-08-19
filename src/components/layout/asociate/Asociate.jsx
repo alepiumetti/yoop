@@ -29,9 +29,9 @@ function Asociate() {
   const classes = useStyles();
 
   return (
-    <div>
-      <Grid container spacing={2} justify="center" align="center">
-        <Grid item xs={4}>
+
+      <Grid container spacing={2} justify="space-evenly"  alignItems="center" style={{height:"100%", paddingBottom:"100px", paddingTop:"100px",margin:"-20px"}} >
+        <Grid align="center" item xs={12} sm={3}>
           <Card className={classes.root}>
             <CardActionArea>
               <CardMedia
@@ -73,7 +73,7 @@ function Asociate() {
             </CardActions>
           </Card>
         </Grid>
-        <Grid item xs={4}>
+        <Grid align="center" item xs={12} sm={3}>
           <Card className={classes.root}>
             <CardActionArea>
               <CardMedia
@@ -118,7 +118,7 @@ function Asociate() {
             </CardActions>
           </Card>
         </Grid>
-        <Grid item xs={4}>
+        <Grid align="center" item xs={12} sm={3} >
           <Card className={classes.root}>
             <CardActionArea>
               <CardMedia
@@ -164,7 +164,6 @@ function Asociate() {
           </Card>
         </Grid>
       </Grid>
-    </div>
   );
 }
 
