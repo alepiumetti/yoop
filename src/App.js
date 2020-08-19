@@ -56,6 +56,7 @@ class App extends Component {
                   return <div>
                     <Navbar/>
                     <Asociate/>
+                    <Footer/>
                   </div>
                 }
               }/>

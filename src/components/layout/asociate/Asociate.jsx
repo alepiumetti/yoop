@@ -96,7 +96,7 @@ function Asociate() {
                   Clases Onlines
                   <br />
                   <CheckIcon />
-                  <b>Pagás 5 meses</b>
+                  <b>Ahorrás $278</b>
                 </Typography>
                 <br />
                 <Divider />
@@ -141,7 +141,7 @@ function Asociate() {
                   Clases Onlines
                   <br />
                   <CheckIcon />
-                  <b>Pagás 9 meses</b>
+                  <b>Ahorrás $834</b>
                 </Typography>
                 <br />
                 <Divider />

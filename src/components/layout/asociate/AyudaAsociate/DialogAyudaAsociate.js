@@ -10,7 +10,7 @@ import CloseIcon from "@material-ui/icons/Close";
 import Typography from "@material-ui/core/Typography";
 
 import InfoIcon from "@material-ui/icons/Info";
-import { Tooltip } from "@material-ui/core";
+import { Tooltip, Divider } from "@material-ui/core";
 
 const styles = (theme) => ({
   root: {
@@ -83,24 +83,26 @@ export default function CustomizedDialogs() {
         </DialogTitle>
         <DialogContent dividers>
           <Typography gutterBottom>
-            Para buscar si un usuario está al día tenés que ingresar su nombre y
-            apellido y/o el DNI y apretar en buscar.
+            Asociandoté vas a obtener todos los descuentos. Para hacerlo, podés abonar con diferentes medios de pago.
           </Typography>
           <Typography gutterBottom>
-            El nombre y apellido podés ingresarlo en minusculas o mayusculas,
-            pero si o si tenés que respetar las letras y si tiene tildes.
+            Seleccionando "T.de Crédito", vas a poder asociarte con tu tarjeta de crédito o tarjeta prepaga y el pago se va a hacer automático, todos los meses (Débito automático)
           </Typography>
           <Typography gutterBottom>
-            <b>
-              Si el usuario está al día con los pagos te aparecerá sus datos con
-              un tilde, de lo contrario, aparecerá una cruz
-            </b>
+            En cambio, con "+ Formas de pago" vas a poder asociarte pagando por RapiPago/PagoFacil, tarjeta de débito o crédito. De esta forma, los pagos no se hacen automático.
           </Typography>
+          <br/>
+          <Divider/>
+          <Typography gutterBottom>
+            <b>La acreditación de los pagos puede tardar entre 2hs a 48hs, por lo que la actualización del pago dentro de la app puede tardar ese periodo de tiempo.</b>
+          </Typography>
+          <Divider/>
+          <br/>
           <Typography gutterBottom>
             Si tenés más preguntas podés consultarnos directamente por{" "}
             <a
               style={{ color: "#115bcc" }}
-              href="http://wpp-redirect.herokuapp.com/go/?p=5493413717471&m=Hola!%20Necesito%20ayuda%20para%20buscar%20si%20un%20usuario%20est%C3%A1%20al%20d%C3%ADa."
+              href="http://wpp-redirect.herokuapp.com/go/?p=543413717471&m=Hola!%20Tengo%20una%20pregunta%20para%20asociarme.%20"
             >
               WhatsApp
             </a>
