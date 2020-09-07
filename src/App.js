@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {BrowserRouter as Router, Route , Switch} from 'react-router-dom';
+import {BrowserRouter as  Route , Switch} from 'react-router-dom';
 
 
 //Style
@@ -15,10 +15,9 @@ import Footer from './components/layout/footer/Footer'
 import Ayuda from './components/layout/ayuda/Ayuda'
 import Marcas from './components/layout/marcas/Marcas'
 import Asociate from './components/layout/asociate/Asociate'
+import TodasMarcas from './components/layout/marcas amigas/TodasMarcasAmigas'
 
-import {useFirebaseApp} from 'reactfire'
 import MarcasAmigas from './components/layout/marcas amigas/MarcasAmigas';
-import { Grid } from '@material-ui/core';
 
 
 
@@ -66,6 +65,14 @@ class App extends Component {
                   return <div>
                     <Navbar/>
                     <MarcasAmigas/>
+                  </div>
+                }
+              }/>
+              <Route exact patch="/marcas-amigas" render={
+                () => { //todas las marcas amigas 
+                  return <div>
+                    <Navbar/>
+                    <TodasMarcas/>
                   </div>
                 }
               }/>
