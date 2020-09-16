@@ -44,10 +44,11 @@ function ImagenMarca(props) {
     
     
 
-    console.log("imagen id: ",props.id)
+    console.log("imagen id: ",props.src)
 
     return (
         <div>
+					<img src={getURL(props.src)}/>
         </div>
     )
 }
