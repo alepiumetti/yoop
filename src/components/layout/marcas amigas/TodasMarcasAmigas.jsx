@@ -7,11 +7,13 @@ import { Button, CardActions, Grid, Typography } from "@material-ui/core";
 import Card from "@material-ui/core/Card";
 import { makeStyles } from "@material-ui/core/styles";
 import ImagenMarca from "./ImagenMarca";
+import PlaceHolderMarcaAmiga from "../../img/PlaceHolder2.jpg"
 
 const useStyles = makeStyles({
   root: {
     minWidth: 275,
     maxWidth: 325,
+    alignText:"center"
   },
   bullet: {
     display: "inline-block",
@@ -24,6 +26,10 @@ const useStyles = makeStyles({
   pos: {
     marginBottom: 12,
   },
+  container:{
+    display: "flex",
+    justifyContent:"center"
+  }
 });
 
 function TodasMarcasAmigas() {
@@ -36,14 +42,15 @@ function TodasMarcasAmigas() {
 
   return (
     <div>
-      <Grid container spacing={2}>
+      <Grid container spacing={3} className={classes.container} >
         {!loadingMarcas &&
           marcas.map(function (marca, i) {
               
               if (marca.val().img === undefined){
                 return(
-                <Grid item key={marca.key}>
-                    <Card className={classes.root}>                    
+                <Grid item key={marca.key} >
+                    <Card className={classes.root}>              
+                    <img src={PlaceHolderMarcaAmiga} style={{width:"250px"}} alt={`Imagen ${marca.val().marca}`} />    
                       <Typography variant="h6" component="h2">{marca.val().marca}</Typography>
                       <CardActions>
                         <Button size="small">Ver más</Button>
@@ -54,7 +61,7 @@ function TodasMarcasAmigas() {
                 return (
                 <Grid item key={marca.key}>
                   <Card className={classes.root}>
-                  <ImagenMarca src={ marca.val().img[0]}/>
+                  <ImagenMarca alt={marca.val().marca} src={ marca.val().img[0]}/>
   
                     <Typography variant="h6" component="h2">{marca.val().marca}</Typography>
                     <CardActions>

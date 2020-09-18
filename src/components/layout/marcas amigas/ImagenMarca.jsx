@@ -1,11 +1,17 @@
 import React , {useState , useEffect } from 'react'
 import * as firebase from 'firebase'
 
-async function getURL(path) {
+ 
+function ImagenMarca(props) {
+
+	const [url , setURL] = useState()
+
+	
+  const getURL = async(path) => {
 	let imgRef = firebase.storage().ref(path);
 	try {
 		let url = await imgRef.getDownloadURL();
-		return url;
+		setURL(url)
 	} catch (error) {
 		// A full list of error codes is available at
 		// https://firebase.google.com/docs/storage/web/handle-errors
@@ -37,19 +43,14 @@ async function getURL(path) {
 	}
 }
 
-function ImagenMarca(props) {
-    let storage = firebase.storage();
-
-    let ref = storage.ref("imgs");
-    
-    
-
-    console.log("imagen id: ",props.src)
-
+	useEffect(() => {
+		getURL(props.src)
+	}, [url])
+  
     return (
-        <div>
-					<img src={getURL(props.src)}/>
-        </div>
+        
+					<img alt={`imagen ${props.alt}`} src={url} style={{ width:"275px"}}/>
+        
     )
 }
 
