@@ -1,20 +1,25 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React from "react";
+import { Link } from "react-router-dom";
 
 // Styles
-import { makeStyles } from '@material-ui/core/styles';
+import { makeStyles } from "@material-ui/core/styles";
 
 // Iconos
-import MenuIcon  from '@material-ui/icons/Menu';
 
 //Material UI
-import { Container ,  IconButton , Typography , Toolbar , AppBar} from '@material-ui/core';
+import {
+  Container,
+  IconButton,
+  Typography,
+  Toolbar,
+  AppBar,
+} from "@material-ui/core";
 
-// Components 
-import LogOut from "../logout/Logout"
-import FormularioBusqueda from "./FormularioBusqueda"
-import DialogAyuda from ".././ayudaMarcas/DialogAyuda"
-
+// Components
+import LogOut from "../logout/Logout";
+import FormularioBusqueda from "./FormularioBusqueda";
+import DialogAyuda from ".././ayudaMarcas/DialogAyuda";
+import Drawer from "./Drawer";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -35,20 +40,17 @@ export default function ButtonAppBar() {
     <div className={classes.root}>
       <AppBar position="static">
         <Toolbar>
-          <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
-            <MenuIcon />
-          </IconButton>
+          <Drawer />
           <Typography variant="h6" className={classes.title}>
             Buscar Usuarios
           </Typography>
-          <LogOut/>
+          <LogOut />
         </Toolbar>
       </AppBar>
-      <Container >
-          <FormularioBusqueda/>
+      <Container>
+        <FormularioBusqueda />
       </Container>
-      <DialogAyuda/>
-
+      <DialogAyuda />
     </div>
   );
 }
