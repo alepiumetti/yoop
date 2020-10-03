@@ -26,8 +26,8 @@ function Informacion() {
       {!loading && (
         <Grid container spacing={2}>
           <Grid item xs="12">
-            <Typography style={style.tituloMarca} variant="h3">
-              {usuario.val().nombre}{" "}
+            <Typography algin="center" style={style.tituloMarca} variant="h3">
+              <b>{usuario.val().nombre} </b>
             </Typography>
           </Grid>
           <Datos id={usuario.val().marca} />

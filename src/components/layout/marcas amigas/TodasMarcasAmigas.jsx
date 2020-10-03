@@ -15,6 +15,7 @@ import Card from "@material-ui/core/Card";
 import { makeStyles } from "@material-ui/core/styles";
 import ImagenMarca from "./ImagenMarca";
 import PlaceHolderMarcaAmiga from "../../img/PlaceHolder2.jpg";
+import BannerMarino from "../../img/BannerPublicidadMarino.jpg";
 
 const useStyles = makeStyles({
   root: {
@@ -57,6 +58,11 @@ function TodasMarcasAmigas() {
   return (
     <div>
       <Grid container spacing={3} className={classes.container}>
+        <img
+          src={BannerMarino}
+          style={{ padding: "25px" }}
+          alt="Banner Marino"
+        />
         {!loadingMarcas &&
           marcas.map(function (marca, i) {
             if (
