@@ -18,6 +18,7 @@ import TodasMarcas from "./components/layout/marcas amigas/TodasMarcasAmigas";
 
 import MarcasAmigas from "./components/layout/marcas amigas/MarcasAmigas";
 import DatosMarcas from "./components/layout/marcas/datosMarcas/DatosMarcas";
+import TyC from "./components/layout/TyC/TyC";
 
 //Main App
 class App extends Component {
@@ -96,6 +97,19 @@ class App extends Component {
                 <div>
                   <Navbar />
                   <MarcasAmigas />
+                </div>
+              );
+            }}
+          />
+          <Route
+            exact
+            path="/terminos-y-condiciones"
+            render={() => {
+              return (
+                <div>
+                  <Navbar />
+                  <TyC />
+                  <Footer />
                 </div>
               );
             }}

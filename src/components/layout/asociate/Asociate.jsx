@@ -95,7 +95,11 @@ function Asociate() {
               <Divider />
             </CardContent>
           </CardActionArea>
-          <CardActions>
+          <CardActions
+            style={{
+              justifyContent: "center",
+            }}
+          >
             <Typography>Asociate</Typography>
             <IconButton onClick={handleChange1}>
               <ArrowDropDownIcon />
@@ -103,7 +107,7 @@ function Asociate() {
           </CardActions>
           <Collapse in={checked1}>
             <CardActions>
-              <FormAsociate />
+              <FormAsociate meses={1} />
             </CardActions>
           </Collapse>
         </Card>
@@ -143,7 +147,11 @@ function Asociate() {
               <Divider />
             </CardContent>
           </CardActionArea>
-          <CardActions>
+          <CardActions
+            style={{
+              justifyContent: "center",
+            }}
+          >
             <Typography>Asociate</Typography>
             <IconButton onClick={handleChange6}>
               <ArrowDropDownIcon />
@@ -151,7 +159,7 @@ function Asociate() {
           </CardActions>
           <Collapse in={checked6}>
             <CardActions>
-              <FormAsociate />
+              <FormAsociate meses={6} />
             </CardActions>
           </Collapse>
         </Card>
@@ -191,7 +199,11 @@ function Asociate() {
               <Divider />
             </CardContent>
           </CardActionArea>
-          <CardActions>
+          <CardActions
+            style={{
+              justifyContent: "center",
+            }}
+          >
             <Typography>Asociate</Typography>
             <IconButton onClick={handleChange12}>
               <ArrowDropDownIcon />
@@ -199,7 +211,7 @@ function Asociate() {
           </CardActions>
           <Collapse in={checked12}>
             <CardActions>
-              <FormAsociate />
+              <FormAsociate meses={12} />
             </CardActions>
           </Collapse>
         </Card>
