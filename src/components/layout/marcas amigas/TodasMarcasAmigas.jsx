@@ -3,6 +3,7 @@ import * as firebase from "firebase";
 import { useEffect } from "react";
 import { useList } from "react-firebase-hooks/database";
 import { useCollection } from "react-firebase-hooks/storage";
+import { Link as LinkMUI } from "@material-ui/core";
 import {
   Button,
   CardActions,
@@ -59,59 +60,66 @@ function TodasMarcasAmigas() {
     <div>
       <Grid container spacing={3} className={classes.container}>
         <img
+          onClick={() => {
+            window.location = "https://marinosrl.com.ar/tienda";
+          }}
           src={BannerMarino}
           style={{ padding: "25px" }}
           alt="Banner Marino"
         />
         {!loadingMarcas &&
           marcas.map(function (marca, i) {
-            if (
-              marca.val().img === undefined ||
-              marca.val().img[0] === undefined ||
-              marca.val().img[0] === ""
-            ) {
-              return (
-                <Grid item key={marca.key}>
-                  <Link to={`/marcas-amigas/id=${marca.key}`}>
-                    <Card className={classes.root}>
-                      <img
-                        className={classes.imgs}
-                        src={PlaceHolderMarcaAmiga}
-                        alt={`Imagen ${marca.val().marca}`}
-                      />
-                      <Typography
-                        variant="h6"
-                        component="h2"
-                        className={classes.Typography}
-                      >
-                        {marca.val().marca}
-                      </Typography>
-                    </Card>
-                  </Link>
-                </Grid>
-              );
-            } else {
-              return (
-                <Grid item key={marca.key}>
-                  <Link to={`/marcas-amigas/id=${marca.key}`}>
-                    <Card className={classes.root}>
-                      <ImagenMarca
-                        width={"275px"}
-                        alt={marca.val().marca}
-                        src={marca.val().img[0]}
-                      />
+            if (marca.val().est === 1) {
+              if (
+                marca.val().img === undefined ||
+                marca.val().img[0] === undefined ||
+                marca.val().img[0] === ""
+              ) {
+                return (
+                  <Grid item key={marca.key}>
+                    <Link to={`/marcas-amigas/id=${marca.key}`}>
+                      <Card className={classes.root}>
+                        <img
+                          className={classes.imgs}
+                          src={PlaceHolderMarcaAmiga}
+                          alt={`Imagen ${marca.val().marca}`}
+                        />
+                        <Typography
+                          variant="h6"
+                          component="h2"
+                          className={classes.Typography}
+                        >
+                          {marca.val().marca}
+                        </Typography>
+                      </Card>
+                    </Link>
+                  </Grid>
+                );
+              } else {
+                const keyImagen = marca.val().img.length;
+                console.log(keyImagen);
+                return (
+                  <Grid item key={marca.key}>
+                    <Link to={`/marcas-amigas/id=${marca.key}`}>
+                      <Card className={classes.root}>
+                        <ImagenMarca
+                          width={"275px"}
+                          alt={marca.val().marca}
+                          src={marca.val().img[marca.val().img.length - 1]}
+                        />
 
-                      <Typography
-                        variant="h6"
-                        component="h2"
-                        className={classes.Typography}
-                      >
-                        {marca.val().marca}
-                      </Typography>
-                    </Card>
-                  </Link>
-                </Grid>
-              );
+                        <Typography
+                          variant="h6"
+                          component="h2"
+                          className={classes.Typography}
+                        >
+                          {marca.val().marca}
+                        </Typography>
+                      </Card>
+                    </Link>
+                  </Grid>
+                );
+              }
             }
           })}
         {loadingMarcas && <CircularProgress style={{ alignSelf: "center" }} />}
