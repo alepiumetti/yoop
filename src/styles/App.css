@@ -1,18 +1,26 @@
-h1,h2,h3,h4,h5,h6,p,span,button{
-  font-family: 'Montserrat', sans-serif;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+span,
+button {
+  font-family: "Montserrat", sans-serif;
 }
 
-.container{
+.container {
   height: auto;
   background-image: url("../components/img/fondo-banner.jpg");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    position: relative;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  width: 100%;
 }
 
-.containerAsociate{
+.containerAsociate {
   min-height: 100%;
   position: relative;
-  
 }

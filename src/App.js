@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
 
 //Style
 import "./styles/App.css";
@@ -19,115 +19,68 @@ import TodasMarcas from "./components/layout/marcas amigas/TodasMarcasAmigas";
 import MarcasAmigas from "./components/layout/marcas amigas/MarcasAmigas";
 import DatosMarcas from "./components/layout/marcas/datosMarcas/DatosMarcas";
 import TyC from "./components/layout/TyC/TyC";
+import PagoEnProceso from "./components/layout/asociate/PagoEnProceso";
+import PagoExitoso from "./components/layout/asociate/PagoExitoso";
 
 //Main App
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <Switch>
-          <Route
-            exact
-            path="/"
-            render={() => {
-              return (
-                <div className="container">
-                  <NavbarInicio />
-                  <Inicio />
-                  <Footer />
-                </div>
-              );
-            }}
-          />
+        <Router>
+          <Switch>
+            <Route exact path="/">
+              <div className="container">
+                <NavbarInicio />
+                <Inicio />
+                <Footer />
+              </div>
+            </Route>
 
-          <Route
-            exact
-            path="/ayuda"
-            render={() => {
-              return (
-                <div>
-                  <Navbar />
-                  <Ayuda />
-                  <Footer />
-                </div>
-              );
-            }}
-          />
+            <Route exact path="/ayuda">
+              <Navbar />
+              <Ayuda />
+              <Footer />
+            </Route>
 
-          <Route
-            exact
-            path="/marcas"
-            render={() => {
-              return (
-                <div>
-                  <Marcas />
-                </div>
-              );
-            }}
-          />
-          <Route
-            exact
-            path="/marcas/informacion"
-            render={() => {
-              return (
-                <div>
-                  <DatosMarcas />
-                </div>
-              );
-            }}
-          />
-          <Route
-            exact
-            path="/asociate"
-            render={() => {
-              return (
-                <div className="containerAsociate">
-                  <Navbar />
-                  <Asociate />
-                  <Footer />
-                </div>
-              );
-            }}
-          />
-          <Route
-            exact
-            path="/marcas-amigas/:id"
-            render={() => {
-              return (
-                <div>
-                  <Navbar />
-                  <MarcasAmigas />
-                </div>
-              );
-            }}
-          />
-          <Route
-            exact
-            path="/terminos-y-condiciones"
-            render={() => {
-              return (
-                <div>
-                  <Navbar />
-                  <TyC />
-                  <Footer />
-                </div>
-              );
-            }}
-          />
-          <Route
-            exact
-            patch="/marcas-amigas"
-            render={() => {
-              //todas las marcas amigas
-              return (
-                <div>
-                  <Navbar />
-                  <TodasMarcas />
-                </div>
-              );
-            }}
-          />
-        </Switch>
+            <Route exact path="/marcas">
+              <Marcas />
+            </Route>
+            <Route exact path="/marcas/informacion">
+              <DatosMarcas />
+            </Route>
+            <Route exact path="/asociate">
+              <Navbar />
+              <Asociate />
+              <Footer />
+            </Route>
+            <Route exact path="/marcas-amigas/:id">
+              <Navbar />
+              <MarcasAmigas />
+              <Footer />
+            </Route>
+            <Route exact path="/terminos-y-condiciones">
+              <Navbar />
+              <TyC />
+              <Footer />
+            </Route>
+            <Route exact path="/asociate/pago-exitoso">
+              <Navbar />
+              <PagoExitoso />
+              <Footer />
+            </Route>
+            <Route exact path="/asociate/pago-en-proceso">
+              <Navbar />
+              <PagoEnProceso />
+              <Footer />
+            </Route>
+            <Route exact path="/marcas-amigas">
+              <Navbar />
+              <TodasMarcas />
+              <Footer />
+            </Route>
+          </Switch>
+        </Router>
       </div>
     );
   }
