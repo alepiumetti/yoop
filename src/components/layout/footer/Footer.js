@@ -68,13 +68,13 @@ export class Footer extends Component {
           <div>
             {" "}
             {/* Container logo Gmail */}
-            <a href="mailto:academia@yoop.com.ar">
+            <a href="mailto:hola@yoop.com.ar">
               <img src={logoGmail} className="logo-sm" alt="logo Gmail" />
             </a>
           </div>
         </div>
         <div className="container-download-app">
-          <a href="">
+          <a href="https://play.google.com/store/apps/details?id=ar.com.yoop">
             <img
               src={downloadApp}
               className="img-downloadApp"

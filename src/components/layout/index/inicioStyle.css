@@ -1,298 +1,283 @@
-
-
 /* Header */
 
-.header{
+.header {
+  height: 100vh;
+  width: 100%;
+}
+
+/* Containers */
+
+.banner-header {
+  width: 100%;
+  height: 80%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.container-title-btn {
+  width: 50%;
+}
+
+.container-img-app {
+  width: 50%;
+  height: auto;
+}
+
+.container.btn {
+  display: flex;
+  align-items: center;
+}
+
+.container-comofunciona {
+  background-color: white;
+  height: 500px;
+  width: 100%;
+}
+
+.container-title-comofunciona {
+  width: 100%;
+  height: 150px;
+  text-align: center;
+  display: table;
+}
+
+.container-pasos {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 350px;
+}
+
+.paso-descarga {
+  width: 20%;
+  height: auto;
+  text-align: center;
+}
+
+.container-marca-amiga {
+  background: #7f7fd5; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #91eae4,
+    #86a8e7,
+    #7f7fd5
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #91eae4,
+    #86a8e7,
+    #7f7fd5
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  text-align: center;
+  height: 350px;
+}
+
+/* Textos */
+
+.title-banner {
+  font-weight: normal;
+  text-transform: uppercase;
+  font-size: 3em;
+  color: #fff;
+  text-align: center;
+  text-shadow: -2px 2px #f18179;
+}
+
+.title-comofunciona {
+  text-transform: uppercase;
+  font-size: 3em;
+  padding-top: 25px;
+  padding-bottom: 25px;
+}
+
+.container-title-btn-marca-amiga {
+  width: 50%;
+}
+
+.title-marca-amiga {
+  color: azure;
+  text-transform: uppercase;
+  font-size: 3em;
+  font-weight: normal;
+  text-shadow: -2px 2px rgb(87, 137, 230);
+}
+
+/* Imagenes */
+
+.logoGooglePlay-header {
+  width: 150px;
+  vertical-align: middle;
+}
+
+.img-smartphone {
+  width: 80%;
+  max-width: 500px;
+}
+
+.img-paso-descarga {
+  width: 150px;
+}
+
+/* Btn */
+
+.btn-descarga {
+  background-color: #62bf4d;
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: 700;
+  border: none;
+  border-radius: 30px;
+  padding: 15px 35px 15px 35px;
+  transition: 0.5s;
+}
+
+.btn-descarga:hover {
+  background-color: #3b7d2d;
+}
+
+.btn-marca-amiga {
+  background-color: #fec249;
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: 700;
+  border: none;
+  border-radius: 30px;
+  padding: 5px 30px 5px 30px;
+  transition: 0.5s;
+}
+
+.btn-marca-amiga:hover {
+  background-color: #e29702;
+}
+
+/* Extras */
+
+.separador-inicio {
+  width: 80%;
+}
+
+/* MediaQueries  */
+
+/* Desktop */
+
+@media screen and (min-width: 780px) {
+  .banner-header {
+    width: 100%;
+    height: 80%;
+  }
+
+  .header {
     height: 100vh;
     width: 100%;
   }
+}
 
+/* Tablets */
+@media screen and (min-width: 481px) and (max-width: 780px) {
   /* Containers */
-  
-  .banner-header{
-    width:100%;
-    height:80% ;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-  }
-
-  .container-title-btn{
-    width: 50%;
-  }
-
-  .container-img-app{
-    width: 50%;
+  .banner-header {
+    flex-direction: column-reverse;
     height: auto;
   }
 
-  .container.btn{
-    display: flex;
-    align-items: center;
-  }
-
-  .container-comofunciona{
-    background-color: white;
-    height: 500px;
-    width: 100%;
-  }
-
-  .container-title-comofunciona{
-    width: 100%;
-    height: 150px;
+  .container-comofunciona {
+    flex-direction: column;
     text-align: center;
-    display: table;
-  }
-
-  .container-pasos{
-    display: flex;
-    justify-content: center ;
-    align-items: center;
-    width: 100%;
-    height: 350px;
-    
-  }
-
-  .paso-descarga{
-    width: 20%;
     height: auto;
-    text-align: center;
   }
 
-  .container-marca-amiga{
-    background: #7F7FD5;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #91EAE4, #86A8E7, #7F7FD5);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #91EAE4, #86A8E7, #7F7FD5); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    width: 100%;
-    text-align: center;
-    height: 350px;
+  .container-pasos {
+    flex-direction: column;
+    height: auto;
   }
 
+  .paso-descarga {
+    width: 50%;
+  }
 
- 
+  .container-marca-amiga {
+    flex-direction: column;
+    height: auto;
+  }
 
   /* Textos */
-
-  .title-banner{
-    font-weight: normal;
-    text-transform: uppercase;
-    font-size: 3em;
-    color: #FFF;
-    text-align: center;
-    text-shadow: -2px 2px  #f18179;
+  .title-banner {
+    font-size: 18pt;
   }
 
-  .title-comofunciona{
-    text-transform: uppercase;
-    font-size: 3em;
-    padding-top: 25px;
-    padding-bottom: 25px;
+  .title-marca-amiga {
+    font-size: 2em;
   }
-
-  .container-title-btn-marca-amiga{
-    width: 50%;
-  }
-
-  .title-marca-amiga{
-    color: azure;
-    text-transform: uppercase;
-    font-size: 3em;
-    font-weight: normal;
-    text-shadow: -2px 2px  rgb(87, 137, 230);
-
-  }
-
-  
 
   /* Imagenes */
-  
-  .logoGooglePlay-header{
-    width: 150px;
-    vertical-align: middle;
-  }
 
-  .img-smartphone{
-    width: 350px;
-  }
-
-  .img-paso-descarga{
-    width: 150px;
-  }
-
-  
-  
-
-  /* Btn */
-  
-  .btn-descarga{
-    background-color:#62BF4D ;
-    color:#fff;
-    text-transform: uppercase;
-    font-weight: 700;
-    border: none;
-    border-radius: 30px;
-    padding:15px 35px 15px 35px;
-    transition: 0.5s;
-  }
-  
-  .btn-descarga:hover{
-    background-color:#3b7d2d;
-  }
-
-
-
-  .btn-marca-amiga{
-    background-color:#fec249 ;
-    color:#fff;
-    text-transform: uppercase;
-    font-weight: 700;
-    border: none;
-    border-radius: 30px;
-    padding:5px 30px 5px 30px;
-    transition: 0.5s;
-  }
-
-  .btn-marca-amiga:hover{
-    background-color: #e29702;
-  }
-
-
-  /* Extras */
-
-  .separador-inicio{
+  .img-smartphone {
     width: 80%;
   }
-  
-  /* MediaQueries  */
 
-  /* Desktop */
-
-  @media screen and (min-width:780px){
-    .banner-header{
-      width: 100%;
-      height:80% ;
-      
-    }
-
-    .header{
-      height: 100vh;
-      width: 100%;
-    }
-  
+  .img-marcaamiga {
+    width: 80%;
   }
+}
 
-  /* Tablets */
-  @media screen and (min-width:481px) and (max-width:780px){
+/* Smartphone */
 
-    /* Containers */
-      .banner-header{
-        
-        flex-direction: column-reverse;
-        height: auto;
-      }
-    
-      .container-comofunciona{
-        flex-direction: column;
-        text-align: center;
-        height: auto;
-      }
-  
-      .container-pasos{
-        flex-direction: column;
-        height: auto;
-      }
-  
-      .paso-descarga{
-        width: 50%;
-      }
-  
-      .container-marca-amiga{
-        flex-direction: column;
-        height: auto;
-      }
-  
-  
-    /* Textos */
-    .title-banner{
-      font-size: 18pt;
-    }
-  
-    .title-marca-amiga{
-      font-size: 2em;
-    }
-  
-    /* Imagenes */
-  
-    .img-smartphone{
-      width: 80%;
-    }
-  
-    .img-marcaamiga{
-      width: 80%;
-    }
-
-  
-  }
-
-    /* Smartphone */
-
-  @media screen and (max-width:480px){
-
+@media screen and (max-width: 480px) {
   /* Containers */
-    .banner-header{
-      
-      flex-direction: column-reverse;
-      height: auto;
-    }
-  
-    .container-comofunciona{
-      flex-direction: column;
-      height: auto;
-    }
+  .banner-header {
+    flex-direction: column-reverse;
+    height: auto;
+  }
 
-    .container-pasos{
-      flex-direction: column;
-      height: auto;
-    }
+  .container-comofunciona {
+    flex-direction: column;
+    height: auto;
+  }
 
-    .paso-descarga{
-      width: 50%;
-    }
+  .container-pasos {
+    flex-direction: column;
+    height: auto;
+  }
 
-    .container-marca-amiga{
-      flex-direction: column;
-      height: auto;
-    }
+  .paso-descarga {
+    width: 50%;
+  }
 
+  .container-marca-amiga {
+    flex-direction: column;
+    height: auto;
+  }
 
   /* Textos */
-  .title-banner{
+  .title-banner {
     font-size: 20pt;
   }
 
-  .title-marca-amiga{
+  .title-marca-amiga {
     font-size: 20pt;
   }
 
   /* Imagenes */
 
-  .img-smartphone{
+  .img-smartphone {
     width: 90%;
   }
 
-  .img-marcaamiga{
+  .img-marcaamiga {
     width: 80%;
   }
 
   /* BTN */
 
-  .btn-marca-amiga{
-    padding:10px 25px 10px 25px;
+  .btn-marca-amiga {
+    padding: 10px 25px 10px 25px;
   }
-
 }
