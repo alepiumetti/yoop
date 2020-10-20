@@ -96,8 +96,11 @@ function TodasMarcasAmigas() {
                   </Grid>
                 );
               } else {
-                const keyImagen = marca.val().img.length;
-                console.log(keyImagen);
+                const logo = marca
+                  .val()
+                  .img.find((element) => element.includes("logo"));
+
+                console.log(logo);
                 return (
                   <Grid item key={marca.key}>
                     <Link to={`/marcas-amigas/id=${marca.key}`}>
@@ -105,7 +108,7 @@ function TodasMarcasAmigas() {
                         <ImagenMarca
                           width={"275px"}
                           alt={marca.val().marca}
-                          src={marca.val().img[marca.val().img.length - 1]}
+                          src={logo}
                         />
 
                         <Typography
